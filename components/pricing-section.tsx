@@ -52,6 +52,12 @@ export function PricingSection() {
     },
   ]
 
+  const creditOptions = [
+    { credits: "200 Credits", price: "$5", details: "40 Images - Expires 1 year" },
+    { credits: "450 Credits", price: "$10", details: "90 Images - Expires 1 year" },
+    { credits: "1000 Credits", price: "$20", details: "200 Images - Never expires" },
+  ]
+
   return (
     <section id="packages" className="relative py-24 bg-black overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-gray-900/10" />
@@ -63,8 +69,8 @@ export function PricingSection() {
           <p className="text-xl text-gray-300">Flexible pricing that grows with your design needs</p>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Pricing Cards - First Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -83,7 +89,7 @@ export function PricingSection() {
 
               <h3 className="text-2xl font-heading font-bold text-white mb-4">{plan.name}</h3>
 
-              <div className="mb-6">
+              <div className="mb-6 bg-black rounded-xl p-4">
                 <span className="text-4xl font-heading font-bold text-white">{plan.price}</span>
                 {plan.credits && <p className="text-sm text-gray-400 mt-2">{plan.credits}</p>}
               </div>
@@ -97,17 +103,53 @@ export function PricingSection() {
                 ))}
               </div>
 
-              <Button
-                className={`w-full rounded-full font-semibold ${
-                  plan.highlighted
-                    ? "bg-white text-black hover:bg-white/90"
-                    : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
-                }`}
-              >
+              <Button className="w-full rounded-full font-semibold bg-white text-black hover:bg-white/90">
                 {plan.cta}
               </Button>
             </div>
           ))}
+        </div>
+
+        {/* Buy Credits Card - Centered Below */}
+        <div className="flex justify-center">
+          <div
+            className="rounded-2xl p-8 bg-white/5 border border-white/10 hover:border-white/20 animate-fade-in-up max-w-md w-full"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <div className="text-sm font-semibold text-gray-400 mb-2">Credits Only</div>
+            <h3 className="text-3xl font-heading font-bold text-white mb-6">Buy Credits</h3>
+
+            <div className="space-y-4 mb-6">
+              {creditOptions.map((option, i) => (
+                <div key={i} className="flex items-center justify-between">
+                  <div>
+                    <p className="text-white font-semibold">{option.credits}</p>
+                    <p className="text-sm text-gray-400">{option.details}</p>
+                  </div>
+                  <span className="text-2xl font-bold text-white">{option.price}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-3 mb-8 pt-6 border-t border-white/10">
+              <div className="flex items-start gap-3">
+                <Check size={20} className="text-white flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">No subscription needed</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Check size={20} className="text-white flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Gift to friends & family</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Check size={20} className="text-white flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Pay as you generate</span>
+              </div>
+            </div>
+
+            <Button className="w-full rounded-full font-semibold bg-white text-black hover:bg-white/90">
+              Buy Credits
+            </Button>
+          </div>
         </div>
       </div>
     </section>

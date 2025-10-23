@@ -7,7 +7,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { FAQSection } from "@/components/faq-section"
 import { BlogSection } from "@/components/blog-section"
 import { HappySpacesSection } from "@/components/happy-spaces-section"
-import { ContactSection } from "@/components/contact-form"
+import { TryForFreeSection } from "@/components/try-for-free-section"
 
 export default function Home() {
   return (
@@ -16,6 +16,7 @@ export default function Home() {
       <HowItWorksSection />
       <TransformationsSection />
       <VideoSection />
+      <TryForFreeSection />
       <PricingSection />
       <TestimonialsSection />
       <BlogSection />
