@@ -79,7 +79,6 @@
 @theme inline {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
-  /* Added Instrument Sans font for headings */
   --font-heading: "Instrument Sans", "Geist Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
