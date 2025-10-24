@@ -12,7 +12,20 @@ export function TryForFreeSection() {
     <section className="relative py-24 bg-black overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
+          <h2 
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold mb-6"
+            style={{
+              fontFamily: 'Urbanist, sans-serif',
+              fontWeight: 600,
+              lineHeight: '100%',
+              letterSpacing: '-2px',
+              textAlign: 'center',
+              background: 'linear-gradient(96.42deg, #FFFFFF 2.48%, rgba(255, 255, 255, 0) 152.62%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
             Try For Free
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

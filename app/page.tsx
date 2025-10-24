@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <HeroSection />
-      <HowItWorksSection />
-      <TransformationsSection />
       <VideoSection />
+      <HowItWorksSection />
       <TryForFreeSection />
       <PricingSection />
+      <TransformationsSection />
       <TestimonialsSection />
       <BlogSection />
       <HappySpacesSection />

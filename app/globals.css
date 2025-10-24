@@ -125,7 +125,6 @@
   body {
     @apply bg-background text-foreground;
   }
-  /* Added heading styles with Instrument Sans */
   h1,
   h2,
   h3,
