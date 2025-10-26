@@ -451,51 +451,54 @@ export function HowItWorksSection() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 lg:mb-20">
-          <h2 
+          <h2
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold mb-4 sm:mb-6"
             style={{
-              fontFamily: 'Urbanist, sans-serif',
+              fontFamily: "Urbanist, sans-serif",
               fontWeight: 600,
-              lineHeight: '100%',
-              letterSpacing: '-2px',
-              background: 'linear-gradient(96.42deg, #FFFFFF 2.48%, rgba(255, 255, 255, 0) 152.62%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              lineHeight: "100%",
+              letterSpacing: "-2px",
+              background:
+                "linear-gradient(96.42deg, #FFFFFF 2.48%, rgba(255, 255, 255, 0) 152.62%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
             }}
           >
             How it works
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl">
-            Our AI-powered design process combines technology with human creativity to transform your
-            space
+            Our AI-powered design process combines technology with human
+            creativity to transform your space
           </p>
         </div>
 
         {/* Stepped Cards Container */}
-        <div className="relative pb-20 sm:pb-40 lg:pb-72">
+        <div className="relative py-20 sm:pb-40 lg:pb-72">
           {/* Desktop & Tablet: 4 columns with stepped layout */}
           <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {steps.map((step, index) => {
               // Stepped offset: each card moves down progressively
               const getTransformClass = () => {
-                switch(index) {
-                  case 0: return "sm:translate-y-0 lg:translate-y-0";
-                  case 1: return "sm:translate-y-[60px] lg:translate-y-[80px]";
-                  case 2: return "sm:translate-y-[120px] lg:translate-y-[160px]";
-                  case 3: return "sm:translate-y-0 lg:translate-y-0";
-                  default: return "";
+                switch (index) {
+                  case 0:
+                    return "sm:translate-y-0 lg:translate-y-0";
+                  case 1:
+                    return "sm:translate-y-[60px] lg:translate-y-[100px]";
+                  case 2:
+                    return "sm:translate-y-[120px] lg:translate-y-[200px]";
+                  case 3:
+                    return "sm:translate-y-[20px] lg:translate-y-[40px]";
+                  default:
+                    return "";
                 }
               };
-              
+
               return (
-                <div
-                  key={index}
-                  className={`relative ${getTransformClass()}`}
-                >
+                <div key={index} className={`relative ${getTransformClass()}`}>
                   {/* Giant Background Number */}
                   <div
-                    className={`absolute -top-16 -left-6 sm:-top-20 sm:-left-8 lg:-top-24 lg:-left-12 text-[160px] sm:text-[200px] lg:text-[280px] font-heading font-bold leading-none pointer-events-none select-none z-0 ${
+                    className={`absolute -top-16 -left-6 sm:-top-20 sm:-left-8 lg:-top-28 lg:-left-12 text-[160px] sm:text-[200px] lg:text-[280px] font-heading font-bold leading-none pointer-events-none select-none z-0 ${step.number === "1" && "italic lg:-left-18"} z-50 ${
                       index === 0 ? "text-white opacity-80" : "opacity-[0.08]"
                     }`}
                     style={
@@ -569,10 +572,7 @@ export function HowItWorksSection() {
           {/* Mobile: Simple stacked layout */}
           <div className="sm:hidden space-y-8">
             {steps.map((step, index) => (
-              <div
-                key={index}
-                className="relative"
-              >
+              <div key={index} className="relative">
                 {/* Giant Background Number */}
                 <div
                   className={`absolute -top-12 -left-4 text-[120px] font-heading font-bold leading-none pointer-events-none select-none z-0 ${
