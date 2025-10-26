@@ -108,7 +108,11 @@ export function HappySpacesSection() {
                 <p className="text-white/90 text-xs sm:text-sm leading-relaxed">
                   Right now, we're focused on transforming the homes of widows,
                   orphans, and underserved communities across West Africa —
-                  individuals who are too often overlooked or marginalized.
+                  individuals who are too often overlooked or marginalized.Here,
+                  you get the chance to gift a beautiful, personalized space to
+                  someone you love, support design-for-impact projects, or
+                  explore real-life transformations that bring comfort,
+                  creativity, and healing into everyday homes.
                 </p>
               </div>
             </div>

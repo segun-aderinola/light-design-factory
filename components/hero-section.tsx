@@ -131,7 +131,8 @@ export function HeroSection() {
                   {/* Border wrapper */}
                   <motion.div
                     style={{ opacity: borderOpacity }}
-                    className="rounded-2xl overflow-hidden border border-white/20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-1"
+                    className="rounded-2xl overflow-hidden border border-white/40"
+                    // className="rounded-2xl overflow-hidden border border-white/20 bg-gradient-to-br from-purple-500/20 to-pink-500/20"
                   >
                     <div className="bg-black rounded-xl aspect-video flex items-center justify-center relative overflow-hidden">
                       <Image

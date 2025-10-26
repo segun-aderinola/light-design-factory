@@ -5,7 +5,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 
 export function Footer() {
   return (
-    <footer className="bg-white py-16">
+    <footer className="bg-white py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Description Text */}
         <div className="text-center mb-8">
@@ -82,24 +82,42 @@ export function Footer() {
             Partner with us
           </h3>
 
-          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-            <div className="flex gap-4 bg-gray-100 p-4 rounded-4xl font-medium">
-              <a href="#" className="text-black hover:underline text-base">
+          <div className="flex justify-center">
+            <div className="inline-flex flex-wrap justify-center items-center gap-3 sm:gap-4 bg-gray-100 p-4 sm:p-6 rounded-4xl font-medium max-w-5xl">
+              <a
+                href="#"
+                className="text-black hover:underline text-sm sm:text-base whitespace-nowrap mx-4"
+              >
                 Investor/Funding
               </a>
-              <a href="#" className="text-black hover:underline text-base">
+              <a
+                href="#"
+                className="text-black hover:underline text-sm sm:text-base whitespace-nowrap mx-4"
+              >
                 Artist
               </a>
-              <a href="#" className="text-black hover:underline text-base">
+              <a
+                href="#"
+                className="text-black hover:underline text-sm sm:text-base whitespace-nowrap mx-4"
+              >
                 Interior Designer
               </a>
-              <a href="#" className="text-black hover:underline text-base">
+              <a
+                href="#"
+                className="text-black hover:underline text-sm sm:text-base whitespace-nowrap mx-4"
+              >
                 Furniture Designer
               </a>
-              <a href="#" className="text-black hover:underline text-base">
+              <a
+                href="#"
+                className="text-black hover:underline text-sm sm:text-base whitespace-nowrap mx-4"
+              >
                 Social Impact Partner
               </a>
-              <a href="#" className="text-black hover:underline text-base">
+              <a
+                href="#"
+                className="text-black hover:underline text-sm sm:text-base whitespace-nowrap mx-4"
+              >
                 Retailer
               </a>
             </div>
@@ -107,7 +125,7 @@ export function Footer() {
         </div>
 
         {/* Large Background Text Slider */}
-        <div className="relative overflow-hidden mt-12">
+        <div className="relative mt-12">
           <style jsx>{`
             @keyframes scroll {
               0% {

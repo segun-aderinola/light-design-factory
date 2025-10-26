@@ -448,7 +448,7 @@ export function HowItWorksSection() {
       id="how-it-works"
       className="relative bg-black overflow-hidden py-20 sm:py-24 lg:py-32"
     >
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8">
         {/* Header */}
         <div className="mb-16 lg:mb-20">
           <h2
@@ -484,11 +484,11 @@ export function HowItWorksSection() {
                   case 0:
                     return "sm:translate-y-0 lg:translate-y-0";
                   case 1:
-                    return "sm:translate-y-[60px] lg:translate-y-[100px]";
+                    return "sm:translate-y-[20px] lg:translate-y-[100px]";
                   case 2:
-                    return "sm:translate-y-[120px] lg:translate-y-[200px]";
+                    return "sm:translate-y-[60px] lg:translate-y-[200px]";
                   case 3:
-                    return "sm:translate-y-[20px] lg:translate-y-[40px]";
+                    return "sm:translate-y-[100px] lg:translate-y-[40px]";
                   default:
                     return "";
                 }
@@ -498,7 +498,7 @@ export function HowItWorksSection() {
                 <div key={index} className={`relative ${getTransformClass()}`}>
                   {/* Giant Background Number */}
                   <div
-                    className={`absolute -top-16 -left-6 sm:-top-20 sm:-left-8 lg:-top-28 lg:-left-12 text-[160px] sm:text-[200px] lg:text-[280px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${step.number === "1" && "italic lg:-left-18"} z-50 ${
+                    className={`absolute -top-16 -left-6 sm:-top-20 sm:-left-8 lg:-top-28 lg:-left-6 text-[160px] sm:text-[200px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${step.number === "1" && "italic lg:-left-12"} z-50 ${
                       index === 0 ? "text-white opacity-80" : "opacity-[0.08]"
                     }`}
                     style={

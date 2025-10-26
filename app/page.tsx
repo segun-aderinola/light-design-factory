@@ -16,13 +16,13 @@ export default function Home() {
       <HeroSection />
       <VideoSection />
       <HowItWorksSection />
-      <HowItWorksCarousel />
+      {/* <HowItWorksCarousel /> */}
       <TryForFreeSection />
       <PricingSection />
       <TransformationsSection />
       <TestimonialsSection />
-      <BlogSection />
       <HappySpacesSection />
+      <BlogSection />
       <FAQSection />
     </main>
   );

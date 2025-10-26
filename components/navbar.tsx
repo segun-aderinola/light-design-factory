@@ -8,11 +8,12 @@ import Image from "next/image";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(false);
 
   const navItems = [
     { label: "How it works", href: "#how-it-works" },
-    { label: "Packages", href: "#pricing" },
-    { label: "Shop Curated Pieces", href: "#shop" },
+    { label: "Packages", href: "#packages" },
+    { label: "Shop Curated Pieces", href: "#shop", comingSoon: true },
     { label: "Blog", href: "#blog" },
     { label: "FAQs", href: "#faq" },
   ];
@@ -22,20 +23,32 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="shrink-0">
             <Image src="/logo.png" height={80} width={80} alt="logo" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-white/70 hover:text-white text-sm transition-colors duration-300"
-              >
-                {item.label}
-              </Link>
+              <div key={item.label} className="relative">
+                {item.comingSoon ? (
+                  <button
+                    type="button"
+                    className="text-white/70 hover:text-white text-sm transition-colors duration-300"
+                    onMouseEnter={() => setShowComingSoon(true)}
+                    onMouseLeave={() => setShowComingSoon(false)}
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="text-white/70 hover:text-white text-sm transition-colors duration-300"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
 
@@ -90,6 +103,24 @@ export function Navbar() {
           </div>
         )}
       </div>
+
+      {/* Coming Soon Overlay */}
+      {showComingSoon && (
+        <div
+          className="absolute top-full left-0 right-0 z-60 flex justify-center pt-4 animate-in fade-in slide-in-from-top-2 duration-200"
+          onMouseEnter={() => setShowComingSoon(true)}
+          onMouseLeave={() => setShowComingSoon(false)}
+        >
+          <div className="bg-black rounded-3xl p-8 max-w-2xl mx-4 border border-white/20 shadow-2xl">
+            <h2 className="text-2xl font-bold text-white mb-3">Coming Soon</h2>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Browse AI-recommended furniture, decor, and accessories. Shop
+              directly from affiliate partners or discover curated brands after
+              completing your design journey.
+            </p>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
