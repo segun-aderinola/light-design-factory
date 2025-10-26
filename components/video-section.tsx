@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { Play } from "lucide-react"
+import { Play } from "lucide-react";
 
 export function VideoSection() {
   return (
     <section className="relative py-24 overflow-hidden flex items-center justify-center">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img 
-          src="/design-showcase-video.jpg" 
-          alt="Background" 
-          className="w-full h-full object-cover" 
+        <img
+          src="/design-showcase-video.jpg"
+          alt="Background"
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
@@ -18,17 +18,21 @@ export function VideoSection() {
       <div className="relative z-10 w-full px-6">
         {/* Play Video Section */}
         <div className="flex items-center justify-center gap-8 my-8">
-          <span className="text-3xl md:text-4xl lg:text-5xl text-white font-light">Play</span>
-          
-          <button className="w-18 h-18 md:w-18 md:h-18 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-2xl">
-            <Play size={48} className="text-black fill-black ml-2" />
+          <span className="text-3xl md:text-4xl lg:text-5xl text-white font-light">
+            Play
+          </span>
+
+          <button className="w-18 h-18 md:w-18 md:h-18 rounded-4xl bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-2xl">
+            <Play size={24} className="text-black fill-black" />
           </button>
-          
-          <span className="text-3xl md:text-4xl lg:text-5xl text-white font-light">Video</span>
+
+          <span className="text-3xl md:text-4xl lg:text-5xl text-white font-light">
+            Video
+          </span>
         </div>
       </div>
     </section>
-  )
+  );
 }
 // "use client";
 

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
@@ -9,16 +9,20 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Description Text */}
         <div className="text-center mb-8">
+          <h3 className="text-3xl font-bold text-black mb-8 font-urbanist">
+            Launching Q4 2025.
+          </h3>
           <p className="text-black text-base leading-relaxed max-w-4xl mx-auto">
-            Lorem ipsum dolor sit amet consectetur. Duis dignissim quisque
-            feugiat consequat libero ac ut id. Integer tempor enim hendrerit
-            feugiat arcu. Accumsan sit ullamcorper magna tellus quis. Ipsum nisl
-            enim mattis cras vestibulum sed justo massa vestibulum.
+            We're working hard to deliver a one-of-a-kind platform that makes
+            beautiful, thoughtful interior design solutions accessible and
+            impactful for everyone, no matter where you live or what you earn.
+            Get ready to transform your space and bring light to someone
+            else&apos;s too.
           </p>
         </div>
 
         {/* Phone Numbers */}
-        <div className="flex justify-center items-center gap-8 mb-8">
+        {/* <div className="flex justify-center items-center gap-8 mb-8">
           <a
             href="tel:+2349016562652"
             className="text-black text-base hover:underline"
@@ -31,7 +35,7 @@ export function Footer() {
           >
             +234 901 6562 652
           </a>
-        </div>
+        </div> */}
 
         {/* Social Media Icons */}
         <div className="flex justify-center items-center gap-6 mb-16">
@@ -74,29 +78,31 @@ export function Footer() {
 
         {/* Partner Section */}
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-black mb-8">
+          <h3 className="text-3xl font-bold text-black mb-8 font-urbanist">
             Partner with us
           </h3>
 
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-            <a href="#" className="text-black hover:underline text-base">
-              Investor/Funding
-            </a>
-            <a href="#" className="text-black hover:underline text-base">
-              Artist
-            </a>
-            <a href="#" className="text-black hover:underline text-base">
-              Interior Designer
-            </a>
-            <a href="#" className="text-black hover:underline text-base">
-              Furniture Designer
-            </a>
-            <a href="#" className="text-black hover:underline text-base">
-              Social Impact Partner
-            </a>
-            <a href="#" className="text-black hover:underline text-base">
-              Retailer
-            </a>
+            <div className="flex gap-4 bg-gray-100 p-4 rounded-4xl font-medium">
+              <a href="#" className="text-black hover:underline text-base">
+                Investor/Funding
+              </a>
+              <a href="#" className="text-black hover:underline text-base">
+                Artist
+              </a>
+              <a href="#" className="text-black hover:underline text-base">
+                Interior Designer
+              </a>
+              <a href="#" className="text-black hover:underline text-base">
+                Furniture Designer
+              </a>
+              <a href="#" className="text-black hover:underline text-base">
+                Social Impact Partner
+              </a>
+              <a href="#" className="text-black hover:underline text-base">
+                Retailer
+              </a>
+            </div>
           </div>
         </div>
 

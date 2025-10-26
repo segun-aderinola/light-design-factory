@@ -498,7 +498,7 @@ export function HowItWorksSection() {
                 <div key={index} className={`relative ${getTransformClass()}`}>
                   {/* Giant Background Number */}
                   <div
-                    className={`absolute -top-16 -left-6 sm:-top-20 sm:-left-8 lg:-top-28 lg:-left-12 text-[160px] sm:text-[200px] lg:text-[280px] font-heading font-bold leading-none pointer-events-none select-none z-0 ${step.number === "1" && "italic lg:-left-18"} z-50 ${
+                    className={`absolute -top-16 -left-6 sm:-top-20 sm:-left-8 lg:-top-28 lg:-left-12 text-[160px] sm:text-[200px] lg:text-[280px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${step.number === "1" && "italic lg:-left-18"} z-50 ${
                       index === 0 ? "text-white opacity-80" : "opacity-[0.08]"
                     }`}
                     style={
@@ -575,7 +575,7 @@ export function HowItWorksSection() {
               <div key={index} className="relative">
                 {/* Giant Background Number */}
                 <div
-                  className={`absolute -top-12 -left-4 text-[120px] font-heading font-bold leading-none pointer-events-none select-none z-0 ${
+                  className={`absolute -top-12 -left-4 text-[120px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${
                     index === 0 ? "text-white opacity-20" : "opacity-[0.08]"
                   }`}
                   style={

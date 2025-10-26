@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { label: "How it works", href: "#how-it-works" },
@@ -15,7 +15,7 @@ export function Navbar() {
     { label: "Shop Curated Pieces", href: "#shop" },
     { label: "Blog", href: "#blog" },
     { label: "FAQs", href: "#faq" },
-  ]
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-md border-b border-white/10">
@@ -41,14 +41,22 @@ export function Navbar() {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 bg-transparent">
+            <Button
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white/90 bg-black rounded-4xl"
+            >
               Log In
             </Button>
-            <Button className="bg-white text-black hover:bg-white/90">Get Started</Button>
+            <Button className="bg-white text-black hover:text-red-500 rounded-4xl">
+              Get Started
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white p-2">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-white p-2"
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -74,12 +82,14 @@ export function Navbar() {
                 >
                   Log In
                 </Button>
-                <Button className="flex-1 bg-white text-black hover:bg-white/90">Get Started</Button>
+                <Button className="flex-1 bg-white text-black hover:bg-white/90">
+                  Get Started
+                </Button>
               </div>
             </div>
           </div>
         )}
       </div>
     </nav>
-  )
+  );
 }
