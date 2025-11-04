@@ -1,23 +1,35 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import Image from "next/image"
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 export function TransformationsSection() {
-  const [scrollPosition, setScrollPosition] = useState(0)
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const images = [
-    { src: "/modern-living-room-with-dark-walls.jpg", alt: "Modern living room" },
-    { src: "/bedroom-with-white-bedding-and-plants.jpg", alt: "Bedroom design" },
+    {
+      src: "/modern-living-room-with-dark-walls.jpg",
+      alt: "Modern living room",
+    },
+    {
+      src: "/bedroom-with-white-bedding-and-plants.jpg",
+      alt: "Bedroom design",
+    },
     { src: "/minimalist-bathroom-with-mirror.jpg", alt: "Bathroom design" },
-    { src: "/luxury-living-room-with-green-walls.jpg", alt: "Luxury living room" },
+    {
+      src: "/luxury-living-room-with-green-walls.jpg",
+      alt: "Luxury living room",
+    },
     { src: "/modern-office-space-with-windows.jpg", alt: "Office space" },
-    { src: "/modern-living-room-with-dark-walls.jpg", alt: "Modern living room" },
-  ]
+    {
+      src: "/modern-living-room-with-dark-walls.jpg",
+      alt: "Modern living room",
+    },
+  ];
 
   return (
-    <section className="relative py-24 bg-black overflow-hidden">
+    <section className="relative pt-12 bg-black overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
@@ -25,7 +37,8 @@ export function TransformationsSection() {
           </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Explore how real spaces are reimagined through powerful AI + Human Design collaborations.
+            Explore how real spaces are reimagined through powerful AI + Human
+            Design collaborations.
           </p>
         </div>
 
@@ -74,5 +87,5 @@ export function TransformationsSection() {
         }
       `}</style>
     </section>
-  )
+  );
 }

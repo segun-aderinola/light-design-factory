@@ -14,10 +14,12 @@ export function HappySpacesSection() {
           </h2>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl leading-relaxed">
-            We strongly believe that everyone — no matter their background, status, or situation — deserves to live in a
-            space that brings joy, dignity, and peace. At Light Design Factory, Happy Spaces are the reason we exist.
-            Our passion is to create environments that uplift the human spirit — places where people can feel seen,
-            safe, and inspired.
+            We strongly believe that everyone — no matter their background,
+            status, or situation — deserves to live in a space that brings joy,
+            dignity, and peace. At Light Design Factory, Happy Spaces are the
+            reason we exist. Our passion is to create environments that uplift
+            the human spirit — places where people can feel seen, safe, and
+            inspired.
           </p>
         </div>
 
@@ -26,11 +28,18 @@ export function HappySpacesSection() {
           {/* Card 1: Gift Cards */}
           <div className="rounded-2xl sm:rounded-3xl bg-black text-white p-6 sm:p-8 flex flex-col animate-fade-in-up min-h-[280px] sm:min-h-[320px] lg:col-span-1">
             <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 flex-shrink-0">
-              <Gift size={24} className="sm:w-7 sm:h-7 text-black" strokeWidth={2} />
+              <Gift
+                size={24}
+                className="sm:w-7 sm:h-7 text-black"
+                strokeWidth={2}
+              />
             </div>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4">Gift Cards</h3>
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4">
+              Gift Cards
+            </h3>
             <p className="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8 flex-grow">
-              Purchase design support for others and spread the joy of beautiful spaces
+              Purchase design support for others and spread the joy of beautiful
+              spaces
             </p>
             <Button className="w-full bg-white text-black hover:bg-white/90 rounded-full py-4 sm:py-6 font-semibold text-sm sm:text-base">
               Buy Gift Cards
@@ -42,13 +51,16 @@ export function HappySpacesSection() {
             className="rounded-2xl sm:rounded-3xl overflow-hidden animate-fade-in-up min-h-[280px] sm:min-h-[320px] lg:col-span-2 sm:col-span-2"
             style={{ animationDelay: "0.1s" }}
           >
-            <div 
+            <div
               className="relative h-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center group cursor-pointer bg-cover bg-center hover:bg-[length:105%] transition-all duration-300"
               style={{ backgroundImage: "url('/modern-living-room.jpg')" }}
             >
               <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play size={20} className="sm:w-6 sm:h-6 text-black fill-black ml-1" />
+                  <Play
+                    size={20}
+                    className="sm:w-6 sm:h-6 text-black fill-black ml-1"
+                  />
                 </div>
               </div>
             </div>
@@ -60,11 +72,18 @@ export function HappySpacesSection() {
             style={{ animationDelay: "0.2s" }}
           >
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mb-4 sm:mb-6 flex-shrink-0">
-              <RiHeartFill size={28} className="sm:w-8 sm:h-8 text-black" strokeWidth={2} />
+              <RiHeartFill
+                size={28}
+                className="sm:w-8 sm:h-8 text-black"
+                strokeWidth={2}
+              />
             </div>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-black mb-3 sm:mb-4">Donation</h3>
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-black mb-3 sm:mb-4">
+              Donation
+            </h3>
             <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 flex-grow">
-              Support community transformation projects across West Africa through design donations.
+              Support community transformation projects across West Africa
+              through design donations.
             </p>
             <Button className="w-full bg-black text-white hover:bg-black/90 rounded-full py-4 sm:py-6 font-semibold text-sm sm:text-base">
               Make a Donation
@@ -76,17 +95,24 @@ export function HappySpacesSection() {
             className="rounded-2xl sm:rounded-3xl overflow-hidden animate-fade-in-up min-h-[280px] sm:min-h-[320px] lg:col-span-2 sm:col-span-2"
             style={{ animationDelay: "0.3s" }}
           >
-            <div 
+            <div
               className="relative h-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center group cursor-pointer bg-cover bg-center transition-all duration-300"
               style={{ backgroundImage: "url('/holding_hands.jpg')" }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
               <div className="relative z-10 p-4 sm:p-6 md:p-8">
                 <p className="text-white font-semibold text-base sm:text-lg mb-2 sm:mb-3 leading-relaxed">
-                  This belief fuels everything we do across the entire Light Design Factory ecosystem.
+                  This belief fuels everything we do across the entire Light
+                  Design Factory ecosystem.
                 </p>
                 <p className="text-white/90 text-xs sm:text-sm leading-relaxed">
-                  Right now, we're focused on transforming the homes of widows, orphans, and underserved communities across West Africa — individuals who are too often overlooked or marginalized.
+                  Right now, we're focused on transforming the homes of widows,
+                  orphans, and underserved communities across West Africa —
+                  individuals who are too often overlooked or marginalized.Here,
+                  you get the chance to gift a beautiful, personalized space to
+                  someone you love, support design-for-impact projects, or
+                  explore real-life transformations that bring comfort,
+                  creativity, and healing into everyday homes.
                 </p>
               </div>
             </div>
@@ -100,9 +126,12 @@ export function HappySpacesSection() {
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mb-4 sm:mb-6 flex-shrink-0">
               <Paintbrush size={24} className="sm:w-7 sm:h-7 text-black" />
             </div>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-black mb-3 sm:mb-4">Designers</h3>
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-black mb-3 sm:mb-4">
+              Designers
+            </h3>
             <p className="text-sm sm:text-base text-gray-700 mb-2">
-              Partner with Light Design Factory to create healing spaces for widows, orphans, and individuals in need across West Africa.
+              Partner with Light Design Factory to create healing spaces for
+              widows, orphans, and individuals in need across West Africa.
             </p>
             <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 flex-grow">
               Showcase your expertise, grow your reach, and design with purpose.
@@ -118,11 +147,18 @@ export function HappySpacesSection() {
             style={{ animationDelay: "0.5s" }}
           >
             <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 flex-shrink-0">
-              <Users size={24} className="sm:w-7 sm:h-7 text-black" strokeWidth={2} />
+              <Users
+                size={24}
+                className="sm:w-7 sm:h-7 text-black"
+                strokeWidth={2}
+              />
             </div>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4">Stories</h3>
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4">
+              Stories
+            </h3>
             <p className="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8 flex-grow">
-              Read inspiring stories from Happy Space Projects and community transformations.
+              Read inspiring stories from Happy Space Projects and community
+              transformations.
             </p>
             <Button className="w-full bg-white text-black hover:bg-white/90 rounded-full py-4 sm:py-6 font-semibold text-sm sm:text-base">
               Read Stories

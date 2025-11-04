@@ -33,12 +33,20 @@ export function HeroSection() {
   const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.5, 3]);
   const videoY = useTransform(scrollYProgress, [0, 0.5, 1], [0, 100, 400]);
   const videoX = useTransform(scrollYProgress, [0, 0.5, 1], [0, 150, 300]);
-  const videoOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [1, 1, 0.8, 0]);
+  const videoOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.7, 1],
+    [1, 1, 0.8, 0]
+  );
   const borderOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-  
+
   // Play button appearance
   const playButtonScale = useTransform(scrollYProgress, [0.4, 0.7], [0, 1]);
-  const playButtonOpacity = useTransform(scrollYProgress, [0.4, 0.6, 0.9, 1], [0, 1, 1, 0]);
+  const playButtonOpacity = useTransform(
+    scrollYProgress,
+    [0.4, 0.6, 0.9, 1],
+    [0, 1, 1, 0]
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +57,10 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative min-h-[120vh] bg-black overflow-hidden">
+    <section
+      ref={containerRef}
+      className="relative min-h-screen bg-black overflow-hidden"
+    >
       <div className="sticky top-0 h-screen">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-purple-900/20" />
@@ -72,26 +83,29 @@ export function HeroSection() {
 
         {/* Background Image */}
         <div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 left-25% hidden lg:block"
           style={{
             backgroundImage:
               "url('/person-wearing-vr-glasses-with-particles-effect.png')",
-            backgroundSize: "contain",
+            backgroundSize: "cover",
+            // backgroundSize: "contain",
             backgroundPosition: "right bottom",
             height: "100%",
             backgroundRepeat: "no-repeat",
+            left: "35%",
           }}
         >
-          <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div className="lg:hidden absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-screen">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full h-screen">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 items-center w-full h-screen">
             {/* Left Content */}
             <div className="animate-fade-in-up z-20 relative">
-              <h1 className="text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6">
-                Let us reimagine <span className="text-gray-400">your space</span>
+              <h1 className="text-6xl lg:text-7xl font-urbanist font-bold text-white leading-tight mb-6 ">
+                Let us reimagine your <br />
+                <span className="text-gray-400"> space</span>
               </h1>
 
               <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-md">
@@ -117,7 +131,8 @@ export function HeroSection() {
                   {/* Border wrapper */}
                   <motion.div
                     style={{ opacity: borderOpacity }}
-                    className="rounded-2xl overflow-hidden border border-white/20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-1"
+                    className="rounded-2xl overflow-hidden border border-white/40"
+                    // className="rounded-2xl overflow-hidden border border-white/20 bg-gradient-to-br from-purple-500/20 to-pink-500/20"
                   >
                     <div className="bg-black rounded-xl aspect-video flex items-center justify-center relative overflow-hidden">
                       <Image
@@ -127,10 +142,16 @@ export function HeroSection() {
                         alt="Design showcase"
                         className="w-full h-full object-cover rounded-lg"
                       />
-                      
+
                       {/* Overlay for darkening during transition */}
-                      <motion.div 
-                        style={{ opacity: useTransform(scrollYProgress, [0.3, 0.6], [0, 0.4]) }}
+                      <motion.div
+                        style={{
+                          opacity: useTransform(
+                            scrollYProgress,
+                            [0.3, 0.6],
+                            [0, 0.4]
+                          ),
+                        }}
                         className="absolute inset-0 bg-black"
                       />
                     </div>
@@ -208,20 +229,20 @@ export function HeroSection() {
 //   const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 2.5, 4.5]);
 //   const videoY = useTransform(scrollYProgress, [0, 0.5, 1], [0, 200, 350]);
 //   const videoX = useTransform(scrollYProgress, [0, 0.6, 1], [0, 100, 200]);
-  
+
 //   // Border and gradient fade out
 //   const borderOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
-  
+
 //   // Video background image fade in
 //   const videoBackgroundOpacity = useTransform(scrollYProgress, [0.4, 0.7], [0, 1]);
-  
+
 //   // Play button elements
 //   const playButtonScale = useTransform(scrollYProgress, [0.5, 0.75], [0, 1]);
 //   const playButtonOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
-  
+
 //   // VR person image fade out
 //   const vrImageOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-  
+
 //   // Background transitions
 //   const bgOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
 
@@ -237,7 +258,7 @@ export function HeroSection() {
 //     <section ref={containerRef} className="relative min-h-[250vh] bg-black overflow-hidden">
 //       <div className="sticky top-0 h-screen overflow-hidden">
 //         {/* Background with gradient overlay */}
-//         <motion.div 
+//         <motion.div
 //           style={{ opacity: bgOpacity }}
 //           className="absolute inset-0 bg-gradient-to-br from-black via-black to-purple-900/20"
 //         />
@@ -336,7 +357,7 @@ export function HeroSection() {
 //                         className="w-full h-full object-cover rounded-md sm:rounded-lg"
 //                         priority
 //                       />
-                      
+
 //                       {/* Darkening overlay during transition */}
 //                       <motion.div
 //                         style={{

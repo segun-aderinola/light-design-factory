@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
-import { Button } from "./ui/button"
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { Button } from "./ui/button";
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(0)
+  const [openIndex, setOpenIndex] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,23 +30,27 @@ export function FAQSection() {
     {
       question: "How does the credit system work?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur. Duis dignissim quisque feugiat consequat libero ac ut id. Integer tempor enim hendrerit feugiat arcu. Accumsan sit ullamcorper magna tellus quis. Ipsum nisl enim mattis cras vestibulum sed justo massa vestibulum. Accumsan sit ullamcorper magna tellus quis. Ipsum nisl enim mattis cras vestibulum sed justo massa vestibulum.",
+        "It works by giving you a certain number of credits depending on the plan you choose. Each credit is used to generate a design. You can use the credits to generate as many designs as you want.",
     },
     {
       question: "Can i upgrade at any time?",
-      answer: "Yes, you can upgrade your plan at any time. Your new plan will take effect immediately.",
+      answer:
+        "Yes, you can upgrade your plan at any time. Your new plan will take effect immediately.",
     },
     {
       question: "How long does the design process take?",
-      answer: "The design process typically takes 5-7 business days from start to finish.",
+      answer:
+        "The design process typically takes 5-7 business days from start to finish.",
     },
     {
       question: "Do you work internationally?",
-      answer: "Yes, we work with clients worldwide. We offer international shipping and design services.",
+      answer:
+        "Yes, we work with clients worldwide. We offer international shipping and design services.",
     },
     {
       question: "What is Light Design Lab?",
-      answer: "Light Design Lab is our research and development division focused on innovation in design technology.",
+      answer:
+        "Light Design Lab is our research and development division focused on innovation in design technology.",
     },
     {
       question: "What is happy spaces?",
@@ -54,24 +58,33 @@ export function FAQSection() {
         "Happy Spaces is our community initiative dedicated to creating beautiful, functional spaces for everyone.",
     },
     {
-      question: "Can i bring my own furniture or design into the design processes?",
-      answer: "We encourage you to bring your own furniture and design preferences into our process.",
+      question:
+        "Can i bring my own furniture or design into the design processes?",
+      answer:
+        "We encourage you to bring your own furniture and design preferences into our process.",
     },
-  ]
+  ];
 
   return (
     <section id="faq" className="relative bg-gray-100 py-20 overflow-hidden">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl lg:text-6xl font-heading font-bold text-black mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-5xl lg:text-6xl font-heading font-bold text-black mb-6">
+            Frequently Asked Questions
+          </h2>
 
-          <p className="text-xl text-gray-600">Everything you need to know about Light Design Factory</p>
+          <p className="text-xl text-gray-600">
+            Everything you need to know about Light Design Factory
+          </p>
         </div>
 
         {/* FAQ Accordion */}
         <div className="bg-black rounded-3xl p-8 space-y-4 animate-fade-in-up">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-b border-white/10 last:border-b-0">
+            <div
+              key={index}
+              className="border-b border-white/10 last:border-b-0"
+            >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                 className="w-full py-6 flex items-center justify-between text-left hover:opacity-80 transition-opacity"
@@ -102,7 +115,7 @@ export function FAQSection() {
           ))}
         </div>
       </div>
-       <div className="max-w-4xl mx-auto px-6 pt-10">
+      <div className="max-w-4xl mx-auto px-6 pt-10">
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-heading font-bold text-black mb-4">
@@ -119,7 +132,10 @@ export function FAQSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
               {/* Name Input */}
               <div>
-                <label htmlFor="name" className="block text-black font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-black font-medium mb-2"
+                >
                   Name
                 </label>
                 <input
@@ -135,7 +151,10 @@ export function FAQSection() {
 
               {/* Email Input */}
               <div>
-                <label htmlFor="email" className="block text-black font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-black font-medium mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -152,7 +171,10 @@ export function FAQSection() {
 
             {/* Question Textarea */}
             <div className="mb-8">
-              <label htmlFor="question" className="block text-black font-medium mb-2">
+              <label
+                htmlFor="question"
+                className="block text-black font-medium mb-2"
+              >
                 Your Question <span className="text-red-500">*</span>
               </label>
               <textarea
@@ -180,5 +202,5 @@ export function FAQSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
