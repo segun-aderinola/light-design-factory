@@ -56,11 +56,11 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Button
               variant="outline"
-              className="border-white/30 text-white hover:bg-white/90 bg-black rounded-4xl"
+              className="border-white/30 text-white hover:bg-secondary hover:text-white transition-colors duration-200 bg-black rounded-4xl"
             >
               Log In
             </Button>
-            <Button className="bg-white text-black hover:text-red-500 rounded-4xl">
+            <Button className="bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200 rounded-4xl">
               Get Started
             </Button>
           </div>
@@ -91,11 +91,11 @@ export function Navbar() {
               <div className="flex gap-2 pt-4 border-t border-white/10">
                 <Button
                   variant="outline"
-                  className="flex-1 border-white/30 text-white hover:bg-white/10 bg-transparent"
+                  className="flex-1 border-white/30 text-white hover:bg-secondary hover:text-white transition-colors duration-200 bg-transparent"
                 >
                   Log In
                 </Button>
-                <Button className="flex-1 bg-white text-black hover:bg-white/90">
+                <Button className="flex-1 bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200">
                   Get Started
                 </Button>
               </div>

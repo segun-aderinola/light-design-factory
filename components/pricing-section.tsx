@@ -2,8 +2,19 @@
 
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 export function PricingSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // Animation duration
+      easing: 'ease-in-out', // Animation easing
+      once: true, // Whether animation should happen only once
+    })
+  }, [])
+
   const plans = [
     {
       name: "Free Plan",
@@ -74,12 +85,13 @@ export function PricingSection() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`rounded-2xl p-8 animate-fade-in-up transition-all duration-300 ${
+              className={`rounded-2xl p-8 transition-all duration-300 ${
                 plan.highlighted
                   ? "bg-gradient-to-br from-white/10 to-white/5 border-2 border-white/30 lg:scale-105"
                   : "bg-white/5 border border-white/10 hover:border-white/20"
               }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              data-aos="fade-up" // AOS animation for fade-up
+              data-aos-delay={`${index * 100}`} // Delay based on the index
             >
               {plan.badge && (
                 <div className="text-sm font-semibold text-white bg-white/20 rounded-full px-3 py-1 inline-block mb-4">
@@ -103,7 +115,7 @@ export function PricingSection() {
                 ))}
               </div>
 
-              <Button className="w-full rounded-full font-semibold bg-white text-black hover:bg-white/90">
+              <Button className="w-full rounded-full font-semibold bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200">
                 {plan.cta}
               </Button>
             </div>
@@ -146,7 +158,7 @@ export function PricingSection() {
               </div>
             </div>
 
-            <Button className="w-full rounded-full font-semibold bg-white text-black hover:bg-white/90">
+            <Button className="w-full rounded-full font-semibold bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200">
               Buy Credits
             </Button>
           </div>

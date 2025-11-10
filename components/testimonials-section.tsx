@@ -99,22 +99,10 @@ export function TestimonialsSection() {
 
   const testimonials = [
     {
-      quote: "Finally! Something to help me get over my indecisiveness when decorating my house!",
-      author: "Amy & Rachel R.",
-      role: "Interior Designer",
-      image: "/professional-woman-headshot.png",
-    },
-    {
-      quote: "The AI suggestions were incredibly helpful and saved me so much time on my project.",
-      author: "John D.",
-      role: "Homeowner",
-      image: "/professional-man-headshot.png",
-    },
-    {
-      quote: "Best design tool I've used. The human touch combined with AI is unbeatable.",
-      author: "Sarah M.",
-      role: "Design Enthusiast",
-      image: "/professional-woman-smiling-headshot.png",
+      quote: "It's been 16 years since I lost my husband. Raising three children alone has been a long, difficult journey. Even now, two of them are graduates still searching for stable jobs. But today, I finally have a space to call my own — a home that brings me peace and dignity. Thanks to the Light Design Factory team, my family is forever grateful.",
+      author: "Omotoluwa Oluwatoyin",
+      role: "Lagos, Nigeria",
+      image: "/omotoluwa_oluwatoyin.jpeg",
     },
   ]
 
@@ -162,14 +150,14 @@ export function TestimonialsSection() {
           <div className="flex gap-4 justify-end mt-12">
             <button
               onClick={prev}
-              className="p-3 rounded-full border-2 border-black text-black hover:bg-black hover:text-white transition-colors"
+              className="p-3 rounded-full border-2  bg-black text-white hover:bg-secondary hover:text-white transition-colors"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={next}
-              className="p-3 rounded-full border-2 border-black text-black hover:bg-black hover:text-white transition-colors"
+              className="p-3 rounded-full border-2  bg-black text-white hover:bg-secondary hover:text-white transition-colors"
               aria-label="Next testimonial"
             >
               <ChevronRight size={24} />

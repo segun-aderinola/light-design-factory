@@ -67,7 +67,7 @@ export function BlogSection() {
 
               <Button
                 variant="outline"
-                className="rounded-full border-black text-black bg-black text-white hover:bg-white"
+                className="rounded-full  bg-black text-white hover:bg-secondary hover:text-white"
               >
                 Read More
               </Button>

@@ -193,7 +193,7 @@ export function FAQSection() {
             <div className="flex justify-center">
               <Button
                 type="submit"
-                className="bg-black text-white hover:bg-black/90 rounded-full px-16 py-6 text-base font-semibold"
+                className=" bg-black text-white hover:bg-secondary hover:text-white rounded-full px-16 py-6 text-base font-semibold"
               >
                 Ask Us
               </Button>

@@ -16,8 +16,8 @@ button{
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.576 0.235 17.38);
+  --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -42,7 +42,7 @@ button{
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   /* Added accent color for red underlines and highlights */
-  --accent-red: #e74c3c;
+  --accent-red: #F22C36;
 }
 
 .dark {
@@ -54,7 +54,7 @@ button{
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: oklch(0.576 0.235 17.38);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -139,6 +139,11 @@ button{
   h6 {
     @apply font-heading font-bold;
   }
+  
+  /* Global button hover state using secondary color */
+  button:hover {
+    @apply bg-secondary text-white transition-colors duration-200;
+  }
 }
 
 /* Added animation utilities */
@@ -199,5 +204,3 @@ button{
 .animate-slide-in-right {
   animation: slideInRight 0.6s ease-out;
 }
-
-

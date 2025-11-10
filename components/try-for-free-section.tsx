@@ -9,13 +9,12 @@ export function TryForFreeSection() {
   const maxCredits = 100;
 
   return (
-    <section className="relative py-24 bg-black overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+    <section className="relative bg-black overflow-hidden">
+      <div className="relative z-10 max-w-8xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-medium mb-6"
             style={{
-              // fontFamily: 'Urbanist, sans-serif',
               fontWeight: 600,
               lineHeight: "100%",
               letterSpacing: "-2px",
@@ -106,7 +105,7 @@ export function TryForFreeSection() {
               </div>
 
               {/* Upload Button */}
-              <Button className="w-full bg-black text-white hover:bg-black/90 rounded-full py-6 text-lg font-semibold">
+              <Button className="w-full bg-black text-white hover:bg-secondary hover:text-white transition-colors duration-200 rounded-full py-6 text-lg font-semibold">
                 Upload Images
               </Button>
             </div>

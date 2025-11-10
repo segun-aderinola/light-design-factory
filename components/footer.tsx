@@ -40,35 +40,35 @@ export function Footer() {
         {/* Social Media Icons */}
         <div className="flex justify-center items-center gap-6 mb-16">
           <a
-            href="#"
+            href="https://x.com/Light_DesignFac?t=kzjtuYVJg6Qc9g5aE-t7IQ&s=09"
             className="text-black hover:text-gray-600 transition-colors"
             aria-label="X (Twitter)"
           >
             <RiTwitterXFill size={24} />
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/light.designfactory?igsh=ZWdrbDVsemQ4bHNv"
             className="text-black hover:text-gray-600 transition-colors"
             aria-label="Instagram"
           >
             <Instagram size={24} />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/company/light-design-factory/"
             className="text-black hover:text-gray-600 transition-colors"
             aria-label="LinkedIn"
           >
             <Linkedin size={24} />
           </a>
           <a
-            href="#"
+            href="https://www.facebook.com/people/Light-Design-Factory/61570107773694/"
             className="text-black hover:text-gray-600 transition-colors"
             aria-label="Facebook"
           >
             <Facebook size={24} />
           </a>
           <a
-            href="#"
+            href="https://www.tiktok.com/@the.light.design?_t=ZS-8zHMG7BQKBD&_r=1"
             className="text-black hover:text-gray-600 transition-colors"
             aria-label="TikTok"
           >
