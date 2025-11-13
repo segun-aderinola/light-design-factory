@@ -43,13 +43,13 @@ export function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="relative bg-black overflow-hidden py-20 sm:py-24 lg:py-32"
+      className="relative bg-black overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32"
     >
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 lg:mb-20">
+        <div className="mb-12 sm:mb-14 md:mb-16 lg:mb-20">
           <h2
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold mb-4 sm:mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-semibold mb-3 sm:mb-4 md:mb-6"
             style={{
               fontFamily: "Urbanist, sans-serif",
               fontWeight: 600,
@@ -64,16 +64,16 @@ export function HowItWorksSection() {
           >
             How it works
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl">
             Our AI-powered design process combines technology with human
             creativity to transform your space
           </p>
         </div>
 
         {/* Stepped Cards Container */}
-        <div className="relative py-20 sm:pb-40 lg:pb-72">
+        <div className="relative pb-8 sm:pb-20 md:pb-32 lg:pb-40 xl:pb-72">
           {/* Desktop & Tablet: 4 columns with stepped layout */}
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {steps.map((step, index) => {
               // Stepped offset: each card moves down progressively
               const getTransformClass = () => {
@@ -95,7 +95,7 @@ export function HowItWorksSection() {
                 <div key={index} className={`relative ${getTransformClass()}`}>
                   {/* Giant Background Number */}
                   <div
-                    className={`absolute -top-16 -left-6 sm:-top-20 sm:-left-8 lg:-top-28 lg:-left-6 text-[160px] sm:text-[200px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${step.number === "1" && "italic lg:-left-12"} z-50 ${
+                    className={`absolute -top-12 -left-4 sm:-top-16 sm:-left-6 md:-top-20 md:-left-8 lg:-top-28 lg:-left-6 text-[120px] sm:text-[160px] md:text-[200px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${step.number === "1" && "italic lg:-left-12"} z-50 ${
                       index === 0 ? "text-white opacity-80" : "opacity-[0.08]"
                     }`}
                     style={
@@ -115,7 +115,7 @@ export function HowItWorksSection() {
 
                   {/* Card */}
                   <div
-                    className="relative z-10 rounded-2xl lg:rounded-3xl border border-white/20 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-white/40 hover:shadow-2xl"
+                    className="relative z-10 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-white/20 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-white/40 hover:shadow-2xl"
                     style={{
                       background:
                         "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
@@ -123,31 +123,31 @@ export function HowItWorksSection() {
                     }}
                   >
                     {/* Card Content */}
-                    <div className="p-6 lg:p-8 min-h-[420px] lg:min-h-[480px] flex flex-col relative z-10">
+                    <div className="p-4 sm:p-6 lg:p-8 min-h-[360px] sm:min-h-[420px] lg:min-h-[480px] flex flex-col relative z-10">
                       {/* SVG Pattern */}
-                      <div className="flex-1 flex items-center justify-center mb-6 relative min-h-[180px]">
+                      <div className="flex-1 flex items-center justify-center mb-4 sm:mb-6 relative min-h-[140px] sm:min-h-[160px] lg:min-h-[180px]">
                         <div className="w-full h-full flex items-center justify-center">
                           <Image
                             src={step.svgPath}
                             alt={`${step.title} pattern`}
                             width={200}
                             height={200}
-                            className="w-full h-full max-w-[160px] max-h-[160px] lg:max-w-[200px] lg:max-h-[200px] object-contain opacity-70"
+                            className="w-full h-full max-w-[120px] max-h-[120px] sm:max-w-[140px] sm:max-h-[140px] md:max-w-[160px] md:max-h-[160px] lg:max-w-[200px] lg:max-h-[200px] object-contain opacity-70"
                           />
                         </div>
                       </div>
 
                       {/* Text Content */}
                       <div className="flex-shrink-0">
-                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-white mb-2 leading-tight">
+                        <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-heading font-bold text-white mb-2 leading-tight">
                           {step.title}
                         </h3>
-                        <p className="text-sm lg:text-base text-gray-300 mb-3 leading-relaxed">
+                        <p className="text-xs sm:text-sm lg:text-base text-gray-300 mb-2 sm:mb-3 leading-relaxed">
                           {step.description}
                         </p>
 
                         {step.details.length > 0 && (
-                          <div className="space-y-2 mt-4">
+                          <div className="space-y-1.5 sm:space-y-2 mt-3 sm:mt-4">
                             {step.details.map((detail, i) => (
                               <p
                                 key={i}
@@ -167,12 +167,12 @@ export function HowItWorksSection() {
           </div>
 
           {/* Mobile: Simple stacked layout */}
-          <div className="sm:hidden space-y-8">
+          <div className="sm:hidden space-y-6">
             {steps.map((step, index) => (
               <div key={index} className="relative">
                 {/* Giant Background Number */}
                 <div
-                  className={`absolute -top-12 -left-4 text-[120px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${
+                  className={`absolute -top-10 -left-3 text-[100px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${
                     index === 0 ? "text-white opacity-20" : "opacity-[0.08]"
                   }`}
                   style={
@@ -192,7 +192,7 @@ export function HowItWorksSection() {
 
                 {/* Card */}
                 <div
-                  className="relative z-10 rounded-2xl border border-white/20 backdrop-blur-sm overflow-hidden"
+                  className="relative z-10 rounded-xl border border-white/20 backdrop-blur-sm overflow-hidden"
                   style={{
                     background:
                       "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
@@ -200,16 +200,16 @@ export function HowItWorksSection() {
                   }}
                 >
                   {/* Card Content */}
-                  <div className="p-6 flex flex-col relative z-10">
+                  <div className="p-5 flex flex-col relative z-10">
                     {/* SVG Pattern */}
-                    <div className="flex items-center justify-center mb-6 relative h-[140px]">
+                    <div className="flex items-center justify-center mb-5 relative h-[120px]">
                       <div className="w-full h-full flex items-center justify-center">
                         <Image
                           src={step.svgPath}
                           alt={`${step.title} pattern`}
-                          width={160}
-                          height={160}
-                          className="w-full h-full max-w-[140px] max-h-[140px] object-contain opacity-70"
+                          width={140}
+                          height={140}
+                          className="w-full h-full max-w-[120px] max-h-[120px] object-contain opacity-70"
                         />
                       </div>
                     </div>
@@ -219,12 +219,12 @@ export function HowItWorksSection() {
                       <h3 className="text-xl font-heading font-bold text-white mb-2 leading-tight">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-gray-300 mb-3 leading-relaxed">
+                      <p className="text-sm text-gray-300 mb-2 leading-relaxed">
                         {step.description}
                       </p>
 
                       {step.details.length > 0 && (
-                        <div className="space-y-2 mt-4">
+                        <div className="space-y-1.5 mt-3">
                           {step.details.map((detail, i) => (
                             <p
                               key={i}

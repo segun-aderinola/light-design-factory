@@ -70,22 +70,26 @@ export function PricingSection() {
   ]
 
   return (
-    <section id="packages" className="relative py-24 bg-black overflow-hidden">
+    <section id="packages" className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-black overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-gray-900/10" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl lg:text-6xl font-heading font-bold text-white mb-6">Choose your package</h2>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-12 md:mb-14 lg:mb-16 animate-fade-in-up">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-3 sm:mb-4 md:mb-6">
+            Choose your package
+          </h2>
 
-          <p className="text-xl text-gray-300">Flexible pricing that grows with your design needs</p>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 px-4">
+            Flexible pricing that grows with your design needs
+          </p>
         </div>
 
         {/* Pricing Cards - First Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mb-6 sm:mb-8">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`rounded-2xl p-8 transition-all duration-300 ${
+              className={`rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 lg:p-8 transition-all duration-300 ${
                 plan.highlighted
                   ? "bg-gradient-to-br from-white/10 to-white/5 border-2 border-white/30 lg:scale-105"
                   : "bg-white/5 border border-white/10 hover:border-white/20"
@@ -94,28 +98,38 @@ export function PricingSection() {
               data-aos-delay={`${index * 100}`} // Delay based on the index
             >
               {plan.badge && (
-                <div className="text-sm font-semibold text-white bg-white/20 rounded-full px-3 py-1 inline-block mb-4">
+                <div className="text-xs sm:text-sm font-semibold text-white bg-white/20 rounded-full px-3 py-1 inline-block mb-3 sm:mb-4">
                   {plan.badge}
                 </div>
               )}
 
-              <h3 className="text-2xl font-heading font-bold text-white mb-4">{plan.name}</h3>
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-3 sm:mb-4">
+                {plan.name}
+              </h3>
 
-              <div className="mb-6 bg-black rounded-xl p-4">
-                <span className="text-4xl font-heading font-bold text-white">{plan.price}</span>
-                {plan.credits && <p className="text-sm text-gray-400 mt-2">{plan.credits}</p>}
+              <div className="mb-4 sm:mb-5 md:mb-6 bg-black rounded-lg sm:rounded-xl p-3 sm:p-4">
+                <span className="text-3xl sm:text-4xl font-heading font-bold text-white">
+                  {plan.price}
+                </span>
+                {plan.credits && (
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">
+                    {plan.credits}
+                  </p>
+                )}
               </div>
 
-              <div className="space-y-3 mb-8">
+              <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-7 md:mb-8">
                 {plan.features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <Check size={20} className="text-white flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">{feature}</span>
+                  <div key={i} className="flex items-start gap-2 sm:gap-3">
+                    <Check size={18} className="text-white flex-shrink-0 mt-0.5 sm:w-5 sm:h-5" />
+                    <span className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                      {feature}
+                    </span>
                   </div>
                 ))}
               </div>
 
-              <Button className="w-full rounded-full font-semibold bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200">
+              <Button className="w-full rounded-full text-sm sm:text-base font-semibold bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200 h-10 sm:h-11">
                 {plan.cta}
               </Button>
             </div>
@@ -125,40 +139,56 @@ export function PricingSection() {
         {/* Buy Credits Card - Centered Below */}
         <div className="flex justify-center">
           <div
-            className="rounded-2xl p-8 bg-white/5 border border-white/10 hover:border-white/20 animate-fade-in-up max-w-md w-full"
+            className="rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 lg:p-8 bg-white/5 border border-white/10 hover:border-white/20 animate-fade-in-up max-w-md w-full"
             style={{ animationDelay: "0.4s" }}
           >
-            <div className="text-sm font-semibold text-gray-400 mb-2">Credits Only</div>
-            <h3 className="text-3xl font-heading font-bold text-white mb-6">Buy Credits</h3>
+            <div className="text-xs sm:text-sm font-semibold text-gray-400 mb-2">
+              Credits Only
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-4 sm:mb-5 md:mb-6">
+              Buy Credits
+            </h3>
 
-            <div className="space-y-4 mb-6">
+            <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-5 md:mb-6">
               {creditOptions.map((option, i) => (
-                <div key={i} className="flex items-center justify-between">
+                <div key={i} className="flex items-center justify-between gap-4">
                   <div>
-                    <p className="text-white font-semibold">{option.credits}</p>
-                    <p className="text-sm text-gray-400">{option.details}</p>
+                    <p className="text-white font-semibold text-sm sm:text-base">
+                      {option.credits}
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-400">
+                      {option.details}
+                    </p>
                   </div>
-                  <span className="text-2xl font-bold text-white">{option.price}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-white">
+                    {option.price}
+                  </span>
                 </div>
               ))}
             </div>
 
-            <div className="space-y-3 mb-8 pt-6 border-t border-white/10">
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-white flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300 text-sm">No subscription needed</span>
+            <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-7 md:mb-8 pt-4 sm:pt-5 md:pt-6 border-t border-white/10">
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Check size={18} className="text-white flex-shrink-0 mt-0.5 sm:w-5 sm:h-5" />
+                <span className="text-gray-300 text-xs sm:text-sm">
+                  No subscription needed
+                </span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-white flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300 text-sm">Gift to friends & family</span>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Check size={18} className="text-white flex-shrink-0 mt-0.5 sm:w-5 sm:h-5" />
+                <span className="text-gray-300 text-xs sm:text-sm">
+                  Gift to friends & family
+                </span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-white flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300 text-sm">Pay as you generate</span>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Check size={18} className="text-white flex-shrink-0 mt-0.5 sm:w-5 sm:h-5" />
+                <span className="text-gray-300 text-xs sm:text-sm">
+                  Pay as you generate
+                </span>
               </div>
             </div>
 
-            <Button className="w-full rounded-full font-semibold bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200">
+            <Button className="w-full rounded-full text-sm sm:text-base font-semibold bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200 h-10 sm:h-11">
               Buy Credits
             </Button>
           </div>

@@ -107,43 +107,49 @@ export function HeroSection() {
           ))}
         </div>
 
-        {/* Background Image */}
+        {/* Background Image - Responsive positioning */}
         <div
-          className="absolute inset-0 z-0 left-25% hidden lg:block"
+          className="absolute inset-0 z-0 opacity-30 md:opacity-40 lg:opacity-100"
           style={{
             backgroundImage:
               "url('/person-wearing-vr-glasses-with-particles-effect.png')",
             backgroundSize: "cover",
-            backgroundPosition: "right bottom",
-            height: "100%",
+            backgroundPosition: "center center",
             backgroundRepeat: "no-repeat",
-            left: "35%",
           }}
         >
-          <div className="lg:hidden absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
+          {/* Gradient overlay for better text readability on mobile */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30 lg:bg-gradient-to-r lg:from-black lg:via-black/80 lg:to-transparent"></div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 h-screen">
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 items-center w-full h-screen">
-            {/* Left Content */}
-            <div className="animate-fade-in-up z-20 relative">
-              <h1 className="text-6xl lg:text-7xl font-urbanist font-bold text-white leading-tight mb-6 ">
-                Let us reimagine your <br />
-                <span className="text-gray-400"> space</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen">
+          <div className="flex items-start justify-start h-full pt-32 sm:pt-36 lg:pt-40">
+            {/* Content Container */}
+            <div className="animate-fade-in-up z-20 relative max-w-3xl text-left">
+              {/* Main Heading */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-urbanist font-bold text-white leading-tight mb-4 sm:mb-6">
+                Let us reimagine
+                <br className="hidden sm:block" />
+                <span className="block sm:inline"> your </span>
+                <span className="text-gray-400">space</span>
               </h1>
 
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-md">
+              {/* Subheading */}
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-xl">
                 AI-powered interior design that transforms your space through
                 cognitive technology, human creativity and a whole lot of soul.
               </p>
 
-              <Button className="bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200 rounded-full px-8 py-6 text-base font-semibold mb-12">
-                Start your Journey
-              </Button>
+              {/* CTA Button */}
+              <div className="mb-8 sm:mb-12">
+                <Button className="bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200 rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl w-full sm:w-auto">
+                  Start your Journey
+                </Button>
+              </div>
 
               {/* Animated Video Container */}
-              <div className="relative w-full max-w-sm h-48">
+              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md h-40 sm:h-48 md:h-56">
                 <motion.div
                   style={{
                     scale: videoScale,
@@ -166,7 +172,7 @@ export function HeroSection() {
                         loop
                         playsInline
                         className="w-full h-full object-cover rounded-lg"
-                        poster="/interior-design-video-thumbnail.jpg" // Optional: fallback image
+                        poster="/interior-design-video-thumbnail.jpg"
                       >
                         <source src="/videos/explainer_video.mp4" type="video/mp4" />
                         <source src="/videos/explainer_video.webm" type="video/webm" />

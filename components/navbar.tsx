@@ -34,7 +34,7 @@ export function Navbar() {
                 {item.comingSoon ? (
                   <button
                     type="button"
-                    className="text-white/70 hover:text-white text-sm transition-colors duration-300"
+                    className="text-white/70 hover:text-white text-base transition-colors duration-300"
                     onMouseEnter={() => setShowComingSoon(true)}
                     onMouseLeave={() => setShowComingSoon(false)}
                   >
@@ -43,7 +43,7 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-white/70 hover:text-white text-sm transition-colors duration-300"
+                    className="text-white/70 hover:text-white text-base transition-colors duration-300"
                   >
                     {item.label}
                   </Link>
@@ -82,7 +82,7 @@ export function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-white/70 hover:text-white text-base transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

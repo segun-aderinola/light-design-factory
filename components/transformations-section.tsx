@@ -51,13 +51,13 @@ export function TransformationsSection() {
   }, []);
 
   return (
-    <section className="relative pt-12 bg-black overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
+    <section className="relative pt-8 sm:pt-10 md:pt-12 bg-black overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-20">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 animate-fade-in-up">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-3 sm:mb-4 md:mb-6 px-4">
             See the amazing transformations
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             Explore how real spaces are reimagined through powerful AI + Human Design collaborations.
           </p>
         </div>
@@ -65,11 +65,11 @@ export function TransformationsSection() {
         {/* Gallery */}
         <div className="relative">
           <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex gap-6 px-4">
+            <div className="flex gap-3 sm:gap-4 md:gap-5 lg:gap-6 px-2 sm:px-4">
               {images.map((image, index) => (
                 <div
                   key={index}
-                  className="group flex-shrink-0 w-[320px] h-[240px] rounded-3xl overflow-hidden relative animate-fade-in"
+                  className="group flex-shrink-0 w-[240px] h-[180px] sm:w-[280px] sm:h-[210px] md:w-[320px] md:h-[240px] rounded-2xl sm:rounded-3xl overflow-hidden relative animate-fade-in"
                   data-aos="fade-up" // Apply AOS animation
                   data-aos-delay={`${index * 100}`} // Delay based on index
                   style={{ animationDelay: `${index * 0.1}s` }}
@@ -97,17 +97,6 @@ export function TransformationsSection() {
             </div>
           </div>
         </div>
-
-        {/* Phone Mockup - Cut off at bottom */}
-        {/* <div className="flex justify-center items-end animate-fade-in-up h-[400px] overflow-hidden">
-          <div className="relative max-w-md w-full -mb-48">
-            <img
-              src="/3d_image.png"
-              alt="Instagram profile on phone"
-              className="w-full h-auto"
-            />
-          </div>
-        </div> */}
       </div>
 
       <style jsx>{`

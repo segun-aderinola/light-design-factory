@@ -49,7 +49,7 @@ export function VideoSection() {
   };
 
   return (
-    <section className="relative py-0 overflow-hidden flex flex-col items-center justify-center min-h-[50vh]">
+    <section className="relative py-0 overflow-hidden flex flex-col items-center justify-center min-h-[60vh] md:min-h-[50vh]">
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
@@ -58,14 +58,14 @@ export function VideoSection() {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
-          poster="/design-showcase-video-poster.jpg" // Optional: add a poster frame
+          className="w-full h-full object-cover object-center"
+          poster="/design-showcase-video-poster.jpg"
         >
           <source src="/videos/explainer_video.mp4" type="video/mp4" />
           <source src="/design-showcase-video.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/40 md:bg-black/50" />
       </div>
 
       {/* Scrolling Text Animations */}
@@ -94,38 +94,38 @@ export function VideoSection() {
         }
       `}</style>
 
-      <div className="relative z-10 w-full flex flex-col items-center justify-center gap-0">
+      <div className="relative z-10 w-full flex flex-col items-center justify-center gap-0 px-4 md:px-0">
         {/* Top Scrolling Text */}
         <div className="relative overflow-hidden w-full">
           <div className="flex animate-scroll-left">
-            <div className="absolute -top-6 text-[120px] sm:text-[160px] lg:text-[200px] font-bold text-white/20 uppercase tracking-wider whitespace-nowrap pr-20">
+            <div className="absolute -top-3 md:-top-6 text-[60px] sm:text-[120px] md:text-[160px] lg:text-[200px] font-bold text-white/20 uppercase tracking-wider whitespace-nowrap pr-10 md:pr-20">
               LIGHT DESIGN FACTORY
             </div>
-            <div className="text-[120px] sm:text-[160px] lg:text-[200px] font-bold text-white/20 uppercase tracking-wider whitespace-nowrap pr-20 invisible">
+            <div className="text-[60px] sm:text-[120px] md:text-[160px] lg:text-[200px] font-bold text-white/20 uppercase tracking-wider whitespace-nowrap pr-10 md:pr-20 invisible">
               LIGHT DESIGN FACTORY
             </div>
           </div>
         </div>
 
         {/* Play Video Section */}
-        <div className="flex items-center justify-center gap-6 md:gap-8 my-8 relative z-20">
-          <span className="text-3xl md:text-4xl lg:text-5xl text-white font-light">
+        <div className="flex items-center justify-center gap-4 md:gap-8 my-6 md:my-8 relative z-20">
+          <span className="text-2xl md:text-4xl lg:text-5xl text-white font-light">
             Play
           </span>
 
           <button
             type="button"
             onClick={handlePlayVideo}
-            className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-2xl"
+            className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-2xl"
             aria-label="Play video in fullscreen"
           >
             <Play
-              size={28}
+              size={24}
               className="md:w-8 md:h-8 text-black fill-black ml-1"
             />
           </button>
 
-          <span className="text-3xl md:text-4xl lg:text-5xl text-white font-light">
+          <span className="text-2xl md:text-4xl lg:text-5xl text-white font-light">
             Video
           </span>
         </div>
@@ -134,18 +134,18 @@ export function VideoSection() {
         <div className="relative w-full">
           <div className="flex animate-scroll-right">
             <div
-              className="absolute md:-bottom-32 text-[120px] sm:text-[160px] lg:text-[200px] font-bold uppercase tracking-wider whitespace-nowrap pr-20"
+              className="absolute -bottom-3 md:-bottom-32 text-[60px] sm:text-[120px] md:text-[160px] lg:text-[200px] font-bold uppercase tracking-wider whitespace-nowrap pr-10 md:pr-20"
               style={{
-                WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)",
+                WebkitTextStroke: "1px rgba(255, 255, 255, 0.3)",
                 color: "transparent",
               }}
             >
               LIGHT DESIGN FACTORY
             </div>
             <div
-              className="text-[120px] sm:text-[160px] lg:text-[200px] font-bold uppercase tracking-wider whitespace-nowrap pr-20 invisible"
+              className="text-[60px] sm:text-[120px] md:text-[160px] lg:text-[200px] font-bold uppercase tracking-wider whitespace-nowrap pr-10 md:pr-20 invisible"
               style={{
-                WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)",
+                WebkitTextStroke: "1px rgba(255, 255, 255, 0.3)",
                 color: "transparent",
               }}
             >
@@ -157,4 +157,3 @@ export function VideoSection() {
     </section>
   );
 }
-
