@@ -14,6 +14,7 @@ export function Navbar() {
     { label: "How it works", href: "#how-it-works" },
     { label: "Packages", href: "#packages" },
     { label: "Shop Curated Pieces", href: "#shop", comingSoon: true },
+    { label: "Light Design Lab", href: "https://lightdesignfactory.com/lab" },
     { label: "Blog", href: "#blog" },
     { label: "FAQs", href: "#faq" },
   ];
