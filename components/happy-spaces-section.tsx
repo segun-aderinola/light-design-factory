@@ -359,7 +359,7 @@ export function HappySpacesSection() {
               Support community transformation projects across West Africa
               through design donations.
             </p>
-            <Link href="https://lightdesignfactory.com/happyspaces">
+            <Link href="https://www.paypal.com/donate/?hosted_button_id=PK9A8SUBWC5L2">
               <Button className="w-full bg-black text-white hover:bg-secondary hover:text-white transition-colors duration-200 rounded-full py-3 sm:py-4 md:py-5 lg:py-6 font-semibold text-sm sm:text-base">
                 Make a Donation
               </Button>
@@ -439,9 +439,11 @@ export function HappySpacesSection() {
               Read inspiring stories from Happy Space Projects and community
               transformations.
             </p>
-            <Button className="w-full bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200 rounded-full py-3 sm:py-4 md:py-5 lg:py-6 font-semibold text-sm sm:text-base">
-              Read Stories
-            </Button>
+            <Link href="https://lightdesignfactory.com/happyspaces">
+              <Button className="w-full bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200 rounded-full py-3 sm:py-4 md:py-5 lg:py-6 font-semibold text-sm sm:text-base">
+                Read Stories
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
