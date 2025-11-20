@@ -13,7 +13,7 @@ import { TryForFreeSection } from "@/components/try-for-free-section";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 export default function Home() {
-  useSmoothScroll();
+  // useSmoothScroll();
 
   return (
     <main className="overflow-hidden">

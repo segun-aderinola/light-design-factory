@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -7,6 +7,8 @@ import "aos/dist/aos.css";
 
 export function TransformationsSection() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [clickedIndex, setClickedIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const images = [
     {
@@ -44,11 +46,29 @@ export function TransformationsSection() {
   // Initialize AOS on component mount
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      easing: 'ease-in-out', // Animation easing
-      once: true, // Run animations only once
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
     });
   }, []);
+
+  // Check if mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleCardClick = (index: number) => {
+    if (isMobile) {
+      setClickedIndex(clickedIndex === index ? null : index);
+    }
+  };
 
   return (
     <section className="relative pt-8 sm:pt-10 md:pt-12 bg-black overflow-hidden">
@@ -58,7 +78,8 @@ export function TransformationsSection() {
             See the amazing transformations
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-4">
-            Explore how real spaces are reimagined through powerful AI + Human Design collaborations.
+            Explore how real spaces are reimagined through powerful AI + Human
+            Design collaborations.
           </p>
         </div>
 
@@ -69,29 +90,57 @@ export function TransformationsSection() {
               {images.map((image, index) => (
                 <div
                   key={index}
-                  className="group flex-shrink-0 w-[240px] h-[180px] sm:w-[280px] sm:h-[210px] md:w-[320px] md:h-[240px] rounded-2xl sm:rounded-3xl overflow-hidden relative animate-fade-in"
-                  data-aos="fade-up" // Apply AOS animation
-                  data-aos-delay={`${index * 100}`} // Delay based on index
+                  onClick={() => handleCardClick(index)}
+                  className="group flex-shrink-0 w-[240px] h-[180px] sm:w-[280px] sm:h-[210px] md:w-[320px] md:h-[240px] rounded-2xl sm:rounded-3xl overflow-hidden relative animate-fade-in cursor-pointer"
+                  data-aos="fade-up"
+                  data-aos-delay={`${index * 100}`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
+                  {/* Main Image */}
                   <Image
                     height={240}
                     width={320}
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className={`w-full h-full object-cover transition-all duration-300 md:group-hover:scale-105 ${
+                      clickedIndex === index ? "opacity-0" : "opacity-100"
+                    }`}
                   />
 
-                  {/* Hover Effect: Second Image */}
-                  <div className="absolute top-0 left-0 w-full h-full transition-all duration-300 opacity-0 group-hover:opacity-100">
+                  {/* Hover/Click Effect: Second Image (Before) */}
+                  <div
+                    className={`absolute top-0 left-0 w-full h-full transition-all duration-300 ${
+                      clickedIndex === index
+                        ? "opacity-100"
+                        : "opacity-0 md:group-hover:opacity-100"
+                    }`}
+                  >
                     <Image
                       height={240}
                       width={320}
                       src={image.hoverSrc}
-                      alt={`Hover on ${image.alt}`}
+                      alt={`Before transformation of ${image.alt}`}
                       className="w-full h-full object-cover"
                     />
                   </div>
+
+                  {/* Text Overlay - Only on mobile when not clicked */}
+                  {isMobile && clickedIndex !== index && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 md:hidden">
+                      <p className="text-white text-xs font-semibold px-3 py-1.5 bg-black/60 rounded-full backdrop-blur-sm">
+                        Tap to see the before
+                      </p>
+                    </div>
+                  )}
+
+                  {/* "After" label when showing before image on mobile */}
+                  {isMobile && clickedIndex === index && (
+                    <div className="absolute top-3 right-3 md:hidden">
+                      <span className="text-white text-xs font-semibold px-3 py-1.5 bg-black/60 rounded-full backdrop-blur-sm">
+                        Before
+                      </span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

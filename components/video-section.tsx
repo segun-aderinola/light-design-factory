@@ -1,11 +1,33 @@
-"use client";
+  "use client";
 
 import { Play } from "lucide-react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export function VideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    if (!videoRef.current || !sectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && videoRef.current && !videoRef.current.paused) {
+          videoRef.current.pause();
+        }
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(sectionRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const handlePlayVideo = async () => {
     if (!videoRef.current) return;
@@ -24,15 +46,20 @@ export function VideoSection() {
       
       // Play video with sound when in fullscreen
       videoRef.current.muted = false;
-      videoRef.current.play();
+      await videoRef.current.play();
 
       // Handle fullscreen exit
       const handleFullscreenChange = () => {
-        if (!document.fullscreenElement && !(document as any).webkitFullscreenElement && !(document as any).msFullscreenElement) {
+        if (!document.fullscreenElement && 
+            !(document as any).webkitFullscreenElement && 
+            !(document as any).msFullscreenElement) {
           setIsFullscreen(false);
-          videoRef.current!.muted = true;
-          videoRef.current!.pause();
-          videoRef.current!.currentTime = 0;
+          if (videoRef.current) {
+            videoRef.current.muted = true;
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+          }
+          // Clean up event listeners
           document.removeEventListener('fullscreenchange', handleFullscreenChange);
           document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
           document.removeEventListener('msfullscreenchange', handleFullscreenChange);
@@ -49,16 +76,19 @@ export function VideoSection() {
   };
 
   return (
-    <section className="relative py-0 overflow-hidden flex flex-col items-center justify-center min-h-[60vh] md:min-h-[50vh]">
+    <section 
+      ref={sectionRef}
+      className="relative py-0 overflow-hidden flex flex-col items-center justify-center min-h-[60vh] md:min-h-[50vh]"
+    >
       {/* Background Video */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black">
         <video
           ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-contain object-center"
           poster="/design-showcase-video-poster.jpg"
         >
           <source src="/videos/explainer_video.mp4" type="video/mp4" />

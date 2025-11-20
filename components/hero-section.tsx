@@ -8,11 +8,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export function HeroSection() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [stars, setStars] = useState<any[]>([]);  // Initialize stars as an empty array
+  const [stars, setStars] = useState<any[]>([]); 
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-    // Generate stars on the client side only
   useEffect(() => {
     const generatedStars = [...Array(50)].map(() => ({
       left: Math.random() * 100,
@@ -20,7 +19,7 @@ export function HeroSection() {
       delay: Math.random() * 2,
       duration: 2 + Math.random() * 3,
     }));
-    setStars(generatedStars);  // Set the generated stars to state
+    setStars(generatedStars);
   }, []);
 
   // Track scroll progress
@@ -143,7 +142,7 @@ export function HeroSection() {
 
               {/* CTA Button */}
               <div className="mb-8 sm:mb-12">
-                <Button className="bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200 rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl w-full sm:w-auto">
+                <Button className="bg-white text-black hover:bg-secondary hover:text-white transition-colors duration-200 rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl w-1/2 sm:w-auto">
                   Start your Journey
                 </Button>
               </div>

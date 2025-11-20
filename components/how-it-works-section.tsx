@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { StepCard } from "./StepCard";
 
 export function HowItWorksSection() {
   const steps = [
@@ -75,7 +76,6 @@ export function HowItWorksSection() {
           {/* Desktop & Tablet: 4 columns with stepped layout */}
           <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {steps.map((step, index) => {
-              // Stepped offset: each card moves down progressively
               const getTransformClass = () => {
                 switch (index) {
                   case 0:
@@ -93,7 +93,6 @@ export function HowItWorksSection() {
 
               return (
                 <div key={index} className={`relative ${getTransformClass()}`}>
-                  {/* Giant Background Number */}
                   <div
                     className={`absolute -top-12 -left-4 sm:-top-16 sm:-left-6 md:-top-20 md:-left-8 lg:-top-28 lg:-left-6 text-[120px] sm:text-[160px] md:text-[200px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${step.number === "1" && "italic lg:-left-12"} z-50 ${
                       index === 0 ? "text-white opacity-80" : "opacity-[0.08]"
@@ -113,7 +112,6 @@ export function HowItWorksSection() {
                     {step.number}
                   </div>
 
-                  {/* Card */}
                   <div
                     className="relative z-10 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-white/20 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-white/40 hover:shadow-2xl"
                     style={{
@@ -122,9 +120,7 @@ export function HowItWorksSection() {
                       boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
                     }}
                   >
-                    {/* Card Content */}
                     <div className="p-4 sm:p-6 lg:p-8 min-h-[360px] sm:min-h-[420px] lg:min-h-[480px] flex flex-col relative z-10">
-                      {/* SVG Pattern */}
                       <div className="flex-1 flex items-center justify-center mb-4 sm:mb-6 relative min-h-[140px] sm:min-h-[160px] lg:min-h-[180px]">
                         <div className="w-full h-full flex items-center justify-center">
                           <Image
@@ -137,7 +133,6 @@ export function HowItWorksSection() {
                         </div>
                       </div>
 
-                      {/* Text Content */}
                       <div className="flex-shrink-0">
                         <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-heading font-bold text-white mb-2 leading-tight">
                           {step.title}
@@ -166,80 +161,24 @@ export function HowItWorksSection() {
             })}
           </div>
 
-          {/* Mobile: Simple stacked layout */}
-          <div className="sm:hidden space-y-6">
-            {steps.map((step, index) => (
-              <div key={index} className="relative">
-                {/* Giant Background Number */}
+          {/* Mobile: Horizontal Scroll Carousel */}
+          <div className="sm:hidden -mx-4">
+            <div
+              className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4 gap-4"
+              style={{
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
+              }}
+            >
+              {steps.map((step, index) => (
                 <div
-                  className={`absolute -top-10 -left-3 text-[100px] font-heading-variant font-bold leading-none pointer-events-none select-none z-0 ${
-                    index === 0 ? "text-white opacity-20" : "opacity-[0.08]"
-                  }`}
-                  style={
-                    index !== 0
-                      ? {
-                          background:
-                            "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 100%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                          backgroundClip: "text",
-                        }
-                      : {}
-                  }
+                  key={index}
+                  className="flex-shrink-0 w-[85vw] snap-center mt-8"
                 >
-                  {step.number}
+                  <StepCard step={step} index={index} />
                 </div>
-
-                {/* Card */}
-                <div
-                  className="relative z-10 rounded-xl border border-white/20 backdrop-blur-sm overflow-hidden"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
-                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
-                  }}
-                >
-                  {/* Card Content */}
-                  <div className="p-5 flex flex-col relative z-10">
-                    {/* SVG Pattern */}
-                    <div className="flex items-center justify-center mb-5 relative h-[120px]">
-                      <div className="w-full h-full flex items-center justify-center">
-                        <Image
-                          src={step.svgPath}
-                          alt={`${step.title} pattern`}
-                          width={140}
-                          height={140}
-                          className="w-full h-full max-w-[120px] max-h-[120px] object-contain opacity-70"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Text Content */}
-                    <div>
-                      <h3 className="text-xl font-heading font-bold text-white mb-2 leading-tight">
-                        {step.title}
-                      </h3>
-                      <p className="text-sm text-gray-300 mb-2 leading-relaxed">
-                        {step.description}
-                      </p>
-
-                      {step.details.length > 0 && (
-                        <div className="space-y-1.5 mt-3">
-                          {step.details.map((detail, i) => (
-                            <p
-                              key={i}
-                              className="text-xs text-gray-400 italic leading-relaxed"
-                            >
-                              {detail}
-                            </p>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

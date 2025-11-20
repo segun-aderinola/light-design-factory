@@ -1,26 +1,12 @@
 "use client";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import { FaTiktok } from "react-icons/fa";
-import { RiTwitterXFill } from "react-icons/ri";
+import { FaPinterest, FaSnapchat, FaTiktok, FaYoutube } from "react-icons/fa";
+import { RiThreadsFill, RiTwitterXFill } from "react-icons/ri";
 
 export function Footer() {
   return (
     <footer className="bg-white py-10 sm:py-12 md:py-14 lg:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Description Text */}
-        <div className="text-center mb-6 sm:mb-7 md:mb-8">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-6 md:mb-8 font-urbanist px-2">
-            Launching Q4 2025.
-          </h3>
-          <p className="text-black text-sm sm:text-base leading-relaxed max-w-4xl mx-auto px-2">
-            We're working hard to deliver a one-of-a-kind platform that makes
-            beautiful, thoughtful interior design solutions accessible and
-            impactful for everyone, no matter where you live or what you earn.
-            Get ready to transform your space and bring light to someone
-            else&apos;s too.
-          </p>
-        </div>
-
         {/* Social Media Icons */}
         <div className="flex justify-center items-center gap-4 sm:gap-5 md:gap-6 mb-10 sm:mb-12 md:mb-14 lg:mb-16">
           
@@ -59,6 +45,38 @@ export function Footer() {
             aria-label="TikTok"
           >
             <FaTiktok className="w-5 h-5 sm:w-6 sm:h-6" />
+          </a>
+
+          <a
+            href="https://pin.it/3fF5aA3oB"
+            className="text-black hover:text-gray-600 transition-colors"
+            aria-label="Pinterest"
+          >
+            <FaPinterest className="w-5 h-5 sm:w-6 sm:h-6" />
+          </a>
+
+          <a
+            href="https://www.snapchat.com/add/thelightdesign?sender_web_id=eff3211f-5fb6-4b90-b211-bf2cdcad521f&device_type=desktop&is_copy_url=true"
+            className="text-black hover:text-gray-600 transition-colors"
+            aria-label="Snapchat"
+          >
+            <FaSnapchat className="w-5 h-5 sm:w-6 sm:h-6" />
+          </a>
+
+          <a
+            href="https://www.threads.com/@light.designfactory"
+            className="text-black hover:text-gray-600 transition-colors"
+            aria-label="Threads"
+          >
+            <RiThreadsFill className="w-5 h-5 sm:w-6 sm:h-6" />
+          </a>
+
+          <a
+            href="https://youtube.com/@lightdesignfactory?si=mdQYT-AQl7FDNraC"
+            className="text-black hover:text-gray-600 transition-colors"
+            aria-label="Youtube"
+          >
+            <FaYoutube className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
         </div>
 
