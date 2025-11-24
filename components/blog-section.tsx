@@ -45,10 +45,10 @@ export function BlogSection() {
               backgroundClip: "text",
             }}
           >
-            Light Design Edits
+            Light Design Edit
           </h2>
 
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed mt-4">
             Discover inspiration, learn new design tips, and dive into stories
             from our global design community. Light Design Edit is where
             creativity, innovation, and intention come to life.

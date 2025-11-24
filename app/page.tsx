@@ -10,10 +10,8 @@ import { FAQSection } from "@/components/faq-section";
 import { BlogSection } from "@/components/blog-section";
 import { HappySpacesSection } from "@/components/happy-spaces-section";
 import { TryForFreeSection } from "@/components/try-for-free-section";
-import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 export default function Home() {
-  // useSmoothScroll();
 
   return (
     <main className="overflow-hidden">
